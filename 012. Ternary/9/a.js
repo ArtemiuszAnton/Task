@@ -9,19 +9,19 @@ if (isNaN(a)) {
     console.log('Вы ввели букву');
 } else {
     switch (a) {
-        case 1:
+        case '1':
             console.log('зима');
             break;
 
-        case 2:
+        case '2':
             console.log('весна');
             break;
 
-        case 3:
+        case '3':
             console.log('лето');
             break;
 
-        case 4:
+        case '4':
             console.log('осень');
             break;
     }
