@@ -3,7 +3,7 @@
 123 -> Сумма цифр = 6 Произведение цифр = 6
  */
 
-let A = 123;
+let A = prompt();
 let numA = A.toString();
 let b = parseInt(+(+numA[0]) + (+numA[1]) + (+numA[2]));
 let c = parseInt(numA[0] * numA[1] * numA[2]);

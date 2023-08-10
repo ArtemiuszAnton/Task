@@ -5,14 +5,11 @@
  */
 
 let a = prompt();
+let sqrt = Math.sqrt(a);
 if (isNaN(a)) {
     console.log('Error');
+} else if (Number.isInteger(sqrt)) {
+    console.log(sqrt);
 } else {
-    let sqrt = Math.sqrt(a)
-
-    if (Number.isInteger(sqrt)) {
-        console.log(sqrt);
-    } else {
-        console.log(Math.floor(sqrt));
-    }
+    console.log(Math.floor(sqrt));
 }

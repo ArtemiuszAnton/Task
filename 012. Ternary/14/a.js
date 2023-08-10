@@ -2,9 +2,9 @@
 Добавить проверки для строк. Удалить лишние пробелы
  */
 
-let a = prompt('Введите текст');
-if (a === "hschool") {
+let a = prompt();
+if (a === 'hschool') {
     console.log(true);
 } else {
     console.log(false);
-}
+} 

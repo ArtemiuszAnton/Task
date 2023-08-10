@@ -1,28 +1,12 @@
-/* Пользователь вводит число: 1, 2, 3 или 4. Если это значение '1', то вывести в консоль
-'зима', '2' – 'весна' и так далее. Добавить проверку на ввод только чисел. Решите
-задачу через switch-case. 
+/* Пользователь вводит строку. Применить метод для разбития строки на массив.
+Добавить проверку на ввод только текста
  */
 
-let a = prompt('Введите число от 1 до 4');
+let hai = prompt('Введите текст');
+let massiveText = [...hai]
 
-if (isNaN(a)) {
-    console.log('Вы ввели букву');
+if (typeof hai !== 'string'){
+    console.log(false);
 } else {
-    switch (a) {
-        case 1:
-            console.log('зима');
-            break;
-
-        case 2:
-            console.log('весна');
-            break;
-
-        case 3:
-            console.log('лето');
-            break;
-
-        case 4:
-            console.log('осень');
-            break;
-    }
+    console.log(massiveText);
 }
