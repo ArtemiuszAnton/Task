@@ -4,10 +4,35 @@
 1234 -> 1 – неч 2 – чет 3 – неч 4 – чет
  */
 
-let FourNum = prompt();
-let toStringFourNum = String(FourNum);
-let firstSymb = toStringFourNum[0];
-let secondSymb = toStringFourNum[1];
-let thirdSymb = toStringFourNum[2];
-let fourthSymb = toStringFourNum[3];
-console.log(FourNum,'->', firstSymb, '->', secondSymb,'->', thirdSymb,'->',fourthSymb);
+let FourNum = prompt().split('');
+console.log(FourNum.join(''));
+if (FourNum[0] % 2 == 0) {
+    console.log(FourNum[0], '-', 'чет');
+} else {
+    console.log(FourNum[0], '-', 'неч');
+}
+
+//
+
+if (FourNum[1] % 2 == 0) {
+    console.log(FourNum[1], '-', 'чет');
+} else {
+    console.log(FourNum[1], '-', 'неч');
+}
+
+//
+
+if (FourNum[2] % 2 == 0) {
+    console.log(FourNum[2], '-', 'чет');
+} else {
+    console.log(FourNum[2], '-', 'неч');
+}
+
+//
+
+if (FourNum[3] % 2 == 0) {
+    console.log(FourNum[3], '-', 'чет');
+} else {
+    console.log(FourNum[3], '-', 'неч');
+}
+

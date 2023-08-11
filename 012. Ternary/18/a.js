@@ -5,7 +5,7 @@
 let a = prompt('Введите текст');
 let aUpperCase = a.toUpperCase();
 if (isNaN(a)) {
-    console.log(console.log(aUpperCase));
+    console.log(aUpperCase);
 } else {
     console.log('Вы ввели число');
 }

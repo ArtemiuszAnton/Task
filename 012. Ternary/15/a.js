@@ -5,8 +5,9 @@
 
 let a = +prompt('Введите число от 0 до 10');
 let b = +prompt('Введите число от 0 до 10');
+
 if (isNaN(a && b)) {
     console.log('Введенные вами данные не число');
 } else {
-    console.log (`I'm`, (a + b));
+    console.log (`I'm`, a,b);
 }
