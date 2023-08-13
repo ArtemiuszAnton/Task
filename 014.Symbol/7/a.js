@@ -1,10 +1,9 @@
-/* На вход программе подаётся строка. Замените все @ на '!' (2 способа)
+/* На вход подается 1 слово. Необходимо преобразовать слово в хештег. Добавить
+проверку на ввод текстовых значений
+hSСhOol -> #hschool
+
  */
 
-let str = prompt().trim();
-console.log(str.replaceAll('@', '!'));
-
-let spl = str.split('@');
-console.log(spl.join('!'));
-
-
+let str = 'hSСhOol';
+if (isNaN(str)) console.log('#' + str.toLowerCase())
+else console.log(false);

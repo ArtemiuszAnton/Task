@@ -1,8 +1,13 @@
-// Дана строка 'aaa bbb ccc'. Вырежите из нее слово 'bbb'
+// Задача на слово палиндром. Если слово одинаковое с 2 сторон, то true, в
+// противном случае false
+// мем -> true
+// тест -> false 
 
-
-let str = 'aaa bbb ccc';
-let strMassive = str.split(' ');
-console.log(strMassive[0], strMassive[2]);
-console.log(str.slice(4, 7));
-
+let str = prompt();
+let strReverse = str.split('').reverse();
+let strJoin = strReverse.join('');
+if (str == strJoin) {
+    console.log(true);
+} else {
+    console.log(false);
+}
