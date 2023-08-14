@@ -4,10 +4,8 @@
 135 -> 9
  */
 
-let str = '135';
-let result = 0;
-for (let i = 0; i < 3; i++) {
-    result += +str[i];
-    console.log(result);
-}
-// console.log(result);
+let a = prompt('Введите циферки:');
+let result = 0
+for (let i = 0; i < a.length; i++) {
+    result += +a[i];
+} console.log(result);

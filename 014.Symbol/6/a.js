@@ -4,4 +4,4 @@
 
 let str = '/home/user/dir/file.txt';
 let strMass = str.split('/');
-console.log(strMass.endWith(r));
+console.log(strMass.slice(-1).join());

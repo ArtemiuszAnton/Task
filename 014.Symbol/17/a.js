@@ -1,13 +1,20 @@
-/* . На вход программе подается строка текста. Напишите программу, которая
-определяет является ли строка хорошей. Текст хороший, если содержит
-подстроку «хорош» во всевозможных регистрах.
-я очень хороший текст => true
+/* На вход программе подается строка, где каждое слово заканчивается “_”.
+Программа должна убрать “_” и первую букву каждого слова (помимо первого)
+преобразовать в верхний регистр
+anna_test_test -> annaTestTest
  */
 
-let str = prompt().toLowerCase();
-if (str.includes('хорош')) {
-    console.log(true);
-} else {
-    console.log(false);
+let str = 'anna_test_test'.split('_');
+str[2][0] = str[2][0].toUpperCase();
+let strJoin = str.join('');
+console.log(strJoin);
+
+let result = '';
+for (let i = 0; i < str.length; i++) {
+    if (str[i]!== '_') {
+       result += str[i]
+    }
+    
 }
+console.log(result);
 
