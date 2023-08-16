@@ -1,9 +1,15 @@
-/* На вход подается 1 слово. Необходимо преобразовать слово в хештег. Добавить
-проверку на ввод текстовых значений
-hSСhOol -> #hschool
+/* 7. Преобразуйте первую букву строки в верхний регистр несколькими способами  */
+let str = prompt()
+console.log(str[0].toUpperCase() + str.slice(1));
 
- */
+let str1 = 'text'
+let res = ''
+for (i = 0; i < str1.length; i++) {
+    if (i === 0) {
 
-let str = 'hSСhOol';
-if (isNaN(str)) console.log('#' + str.toLowerCase())
-else console.log(false);
+        res += str1[0].toUpperCase()
+    } else {
+        res+= str1[i]
+    }
+}
+console.log(res);

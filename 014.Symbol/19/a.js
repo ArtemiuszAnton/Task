@@ -4,17 +4,17 @@
  */
 
 let str = 'АааГГЦЦцТТтттА'.toLowerCase();
-let a = 'а'
-let g = 'г'
-let c = 'ц'
-let t = 'т'
+let a = 0
+let g = 0
+let c = 0
+let t = 0
 res = ''
 for (let i = 0; i < str.length; i++) {
-    if (condition) {
+    if (str[i] === 'а') a++
+    else if (str[i] === 'г') g++
+    else if (str[i] === 'ц') c++
+    else if (str[i] === 'т') t++
 
-    }
-res+=str[i].toUpperCase() + str[a]  
-       
-    }
+}
 
-console.log(res);
+console.log('А' + ' - ' + a + '; ' + 'Г' + ' - ' + g + '; ' + 'Ц' + ' - ' + c + '; ' + 'Т' + ' - ' + t);

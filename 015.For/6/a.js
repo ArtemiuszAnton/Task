@@ -1,7 +1,4 @@
-/* 6. На вход подается строка '/home/user/dir/file.txt'. Необходимо вернуть имя файла 
-(подстрока после последнего символа “/" ) из полного пути к файлу('file.txt')
- */
+/* Выведите на экран случайное целое число от 1 до 100. (Math.rando*/
 
-let str = '/home/user/dir/file.txt';
-let strMass = str.split('/');
-console.log(strMass.slice(-1).join());
+let num = Math.random()*100+1
+console.log(Math.floor(num));
