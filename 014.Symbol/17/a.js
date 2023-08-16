@@ -5,16 +5,11 @@ anna_test_test -> annaTestTest
  */
 
 let str = 'anna_test_test'.split('_');
-str[2][0] = str[2][0].toUpperCase();
-let strJoin = str.join('');
-console.log(strJoin);
-
-let result = '';
-for (let i = 0; i < str.length; i++) {
-    if (str[i]!== '_') {
-       result += str[i]
-    }
-    
+let result = str[0]
+for (let i = 1; i < str.length; i++) {
+   
+    result += str[i][0].toUpperCase() + str[i].slice(1)
+   
 }
-console.log(result);
 
+console.log(result);
