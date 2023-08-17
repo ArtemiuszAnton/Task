@@ -1,13 +1,8 @@
-// Задача на слово палиндром. Если слово одинаковое с 2 сторон, то true, в
-// противном случае false
-// мем -> true
-// тест -> false 
+// Преобразуйте первую букву каждого слова строки в верхний регистр.
 
-let str = prompt();
-let strReverse = str.split('').reverse();
-let strJoin = strReverse.join('');
-if (str == strJoin) {
-    console.log(true);
-} else {
-    console.log(false);
+let str = 'first second third'.split(' ');
+let res = ''
+for (let i = 0; i < str.length; i++) {
+    res += str[i][0].toUpperCase() + str[i].slice(1)+ ' ';
 }
+console.log(res);
