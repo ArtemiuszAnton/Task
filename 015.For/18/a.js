@@ -6,10 +6,10 @@
 let num = '34325625256';
 let result = '';
 for (let i = 0; i < num.length; i++) {
-    if (num[i]%2===0){
-        result+= ` ${num[i]} чет`
+    if (num[i] % 2 === 0) {
+        result += ` ${num[i]} чет`
     } else {
-        result+= ` ${num[i]} неч`
+        result += ` ${num[i]} неч`
     }
 }
 console.log(result);

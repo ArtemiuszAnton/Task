@@ -1,14 +1,14 @@
-/* На вход подается url. Если он начинается с http, содержит хотя бы один “/” и
-заканчивается подстрокой .com или .ru, то вывести true, в противном случае false
+/* На вход число. Необходимо вывести все числа от 1 до введенного числа. Добавить
+проверку вводимого значения, если это текст –> сообщение об ошибке
  */
 
-let url = prompt('Введите ссылку:');
-let urlMassive = url.split('');
-let RuCom = url.split('.')
-if (url.startsWith('http') && urlMassive.includes('/')) {
-    if (RuCom[RuCom.length - 1] === 'com' || RuCom[RuCom.length - 1] === 'ru'){
-    console.log(true);
-}
-} else {
-    console.log(false);
+let num = 4;
+for (let i = 1; i <= num; i++) {
+    if (!isNaN(num)) {
+        let res = i;
+        console.log(res);
+       
+    } else {
+        console.log(false);
+    }
 }

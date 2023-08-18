@@ -2,15 +2,10 @@
 кратные 3. 
  */
 
-let str1 = prompt();
-let str2 = prompt();
+let num = 45;
+for (let i = 1; i <= num; i++) {
+    if (i % 3 === 0) {
+console.log(i);
+    }
 
-if (str1.endsWith(str2)) {
-    console.log(true);
-} else {
-    console.log(false);
 }
-
-console.log(str1.endsWith(str2) ? true : false);
-str1.endsWith(str2) ? console.log(true) : console.log(false);
-
