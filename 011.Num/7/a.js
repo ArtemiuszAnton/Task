@@ -3,9 +3,13 @@
 В течение первых двух лет собачий год равен 10.5 человеческим годам. После
 этого каждый год собаки равен 4 человеческим годам */
 
-let a = prompt();
-if (a == 1 || a == 2) {
-    console.log(a * 10.5);
-} else {
-    console.log(21 + (a - 2) * 4);
+let dog = +prompt();
+let men = 0;
+for (let i = 0; i < dog; i++) {
+    if (i == 0 || i == 1) {
+        men += 10.5
+    } else {
+        men += 4
+    }
+    console.log(men);
 }

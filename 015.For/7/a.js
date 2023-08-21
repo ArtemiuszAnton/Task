@@ -9,7 +9,7 @@ for (i = 0; i < str1.length; i++) {
 
         res += str1[0].toUpperCase()
     } else {
-        res+= str1[i]
+        res += str1[i]
     }
 }
 console.log(res);
