@@ -3,10 +3,8 @@
 // мем -> true
 // тест -> false 
 
-let str = prompt();
-let strReverse = str.split('').reverse();
-let strJoin = strReverse.join('');
-if (str == strJoin) {
+let str = prompt().split('');
+if (str.join('') == str.reverse().join('') ) {
     console.log(true);
 } else {
     console.log(false);
