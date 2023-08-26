@@ -6,7 +6,7 @@
 let arr = [10, 20, 30, 50, 235, 3000];
 let res = [];
 for (let i = 0; i < arr.length; i++) {
-    if (toString(arr[i][0]) === '1' || toString(arr[i][0]) === '2' || toString(arr[i][0]) === '5') {
+    if (String(arr[i][0]) === '1' || String(arr[i][0]) === '2' || String(arr[i][0]) === '5') {
         res.push(arr[i])
         
     }
