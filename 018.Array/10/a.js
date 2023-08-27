@@ -5,10 +5,11 @@
 [1, 24, 5] -> [“нечет”, “чет”, “нечет”]
 Использовать map
  */
+
 let n = 6;
 let arr = [];
 for (let i = 0; i < n; i++) {
-    arr.push(prompt())   
+    arr.push(prompt())
 }
 
 // let res = arr.map(function (elem) {
@@ -23,11 +24,11 @@ for (let i = 0; i < n; i++) {
 
 let newArr = [];
 arr.forEach(function (elem) {
-if (elem % 2 === 0) {
-    newArr.push('чет')
-} else {
-    newArr.push('нечет')
-}
+    if (elem % 2 === 0) {
+        newArr.push('чет')
+    } else {
+        newArr.push('нечет')
+    }
 })
 
 console.log(newArr);
