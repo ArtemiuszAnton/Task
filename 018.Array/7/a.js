@@ -1,10 +1,10 @@
-/* Дан массив с элементами [1, 2, 3, 4, 5]. С помощью цикла for of найдите сумму
-элементов этого массива  */
+/* На входе задан массив [‘hschool’, ‘hschool_0’, ‘hschool_1’]. Напишите все возможные
+способы обращения к первому и последнему элементам
+ */
 
 
-let arr = [1, 2, 3, 4, 5];
-let res = 0
-for (let i of arr) {
-    res += i
-    
-} console.log(res);
+let arr = ['hschool', 'hschool_0', 'hschool_1'];
+
+console.log(arr[0] + ' ' + arr[2]);
+console.log(arr.lastIndexOf());
+console.log(arr.shift() + ' ' + arr.pop());
