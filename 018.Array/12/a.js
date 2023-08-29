@@ -1,15 +1,24 @@
-/* Дан массив 2, 5, 9, 15, 0, 4. Выведите все числа кратные 5 циклом while
+/*  На входе n – количество элементов массива. Далее производится заполнение
+массива с клавиатуры. Необходимо создать новый массив из отфильтрованных
+значений, где строка начинается на [a, h]. Проверка на ввод только текстовых
+значений на заполнение массива. filter
+[“ann”, “school”, “hschool”, “borabora”] -> [“ann”, “hschool”]
 
  */
 
-let arr = [2, 5, 9, 15, 0, 4];
-let res = []
-i = 0
-while (i < arr.length) {
-    
-    if (arr[i] % 5 === 0) {
-        res.push(arr[i])
-    } i++
-    
+let n = 4;
+let array = []
+for (let i = 0; i < n; i++) {
+    array.push(prompt('Введите текст'))
+
 }
+
+let res = array.filter(function (elem) {
+    if (elem.startsWith('a') || elem.startsWith('h')) {
+        return true
+    } else {
+        return false
+    }
+})
+
 console.log(res);
