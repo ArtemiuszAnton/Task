@@ -12,5 +12,7 @@ let res = arr.filter(function (elem) {
     return elem >= 0
 })
 
+
+console.log(elem);
 console.log(res);
 
