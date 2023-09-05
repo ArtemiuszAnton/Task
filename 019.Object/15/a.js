@@ -1,16 +1,15 @@
-/* Пользователь вводит 6 значений и распределяет их поровну между 2 массивами.
-Cоздать новый массив, добавить туда значения всех массивов. Spread
+/* На входе массив чисел. На основе этого массива сформировать объект, где ключ –
+число массива, значение – true/false. True – число четное, false – нечетное 
  */
 
-let arr_1 = [];
-let arr_2 = [];
+let arr = [2, 3, 4, 5, 6, 7, 22, 45];
+let obj = {};
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 == 0) {
+        obj[arr[i]] = true
+    } else {
+        obj[arr[i]] = false
 
-for (let i = 0; i < 6; i++) {
-
-    if (i < 3) {
-        arr_1.push(prompt())
-    } else arr_2.push(prompt())
-
+    }
 }
-let nArr = [...arr_1,...arr_2]
-console.log(nArr);
+console.log(obj);

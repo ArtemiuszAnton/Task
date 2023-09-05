@@ -1,27 +1,12 @@
-/* На входе n – количество элементов массива. Далее производится заполнение
-массива с клавиатуры. Выведите произведение всех элементов массива.
-Проверки на ввод только чисел. Использовать forEach, reduce
+/* На входе пустой объект. С клавиатуры вводятся 2 числа. Необходимо добавить в
+объект ключ “avg” со значением среднего арифметического введенных с чисел
  */
 
-let n = 5;
-let arr = [];
+const obj = {}
 
-for (let i = 0; i < n; i++) {
-    arr.push(+prompt())
-}
+let a = +prompt()
+let b = +prompt()
 
-res = 1
-arr.forEach(function (elem) {
-    if (!isNaN(elem)) {
-        res *= elem
-    }
-})
-console.log(res);
+obj.avg = a + b / 2
 
-// reduce
-
-let res_2 = arr.reduce(function (elem, sum) {
-    return elem * sum
-})
-
-console.log(res_2);
+console.log(obj);
