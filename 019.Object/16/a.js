@@ -7,7 +7,7 @@
 let obj = {};
 let arr = []
 for (let i = 1; i <= 5; i++) {
-    obj[i] = prompt()
+    obj[i] = +prompt()
 
 }
 
