@@ -1,28 +1,24 @@
-/*   На входе 7 чисел. Все эти значения пользователь вводит с клавиатуры и заполяет
-5 первыми значениями массив. Далее необходимо создать массив из тех
-значений, которые являются числами и НЕ равны 2 другим введенным. Если
-длина массива равна 0, то вывести ‘Массив пуст’. Добавить проверку на ввод
-только чисел после каждого введенного элемента. forEach
+/*   Напишите функцию, которая принимает строку состоящую из нескольких слов.
+Каждое нечетное слово строки функция должна преобразовать в нижний регистр,
+все четные слова, соответственно, в верхний
+happy new year -> happy NEW year
 */
 
-let num = 5;
-let a = prompt('Введите 6')
-let b = prompt('Введите 7')
-let arr = [];
-for (let i = 0; i < num; i++) {
-    arr.push(prompt())
-}
+const word = prompt().split(' ');
 
-let res = arr.filter(function (elem) {
-    if (!isNaN(elem) && (elem != a && elem != b)) {
-        return true
-    } else {
-        return false;
+
+function changeWord(word) {
+    let arr = []
+    for (let i = 0; i < word.length; i++) {
+        if (i % 2 !== 0) {
+            arr.push(word[i].toUpperCase())
+        } else {
+            arr.push(word[i].toLowerCase())
+        }
     }
-})
 
-if (res.length === 0) {
-    console.log('Массив пуст');
-} else {
-    console.log(res);
+    return arr
 }
+
+const res = changeWord(word);
+console.log(res.join(' '));

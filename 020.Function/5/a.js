@@ -1,22 +1,17 @@
-/* На входе 10 элементов. Из элементов составить 2 массива по 5 элементов. Далее
-необходимо сравнить массивы. Если они идентичны, то вывести булевое true, в
-противном случае false
-
+/* На входе массив. Необходимо создать функцию проверки на то что в массиве
+только числа. Функция возвращает true, если в массиве только числа и false в
+противном случае
  */
 
-let a = 'qwertqweft';
-let arr1 = [];
-let arr2 = [];
+const arr = [2, 3, 4, 5, 6,'e'];
+function filterArr() {
+        let res = arr.every(function (elem) {
+                if (!isNaN(elem)) {
+                        return true
+                }
+        })
+        return res
+}
 
-for (let i = 0; i < a.length; i++) {
-        if (i <= 4) {
-                arr1.push(a[i]);
-        } else {
-                arr2.push(a[i]);
-        }
-}
-if (arr1.join('') === arr2.join('')){
-        console.log(true);
-} else {
-        console.log(false);
-}
+let fin = filterArr(arr);
+console.log(fin);

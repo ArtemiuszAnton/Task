@@ -1,21 +1,22 @@
 /* На входе n – количество элементов массива. Далее производится заполнение
-массива с клавиатуры. Необходимо вывести true, если хотя бы 1 элемент массива –
-число. Some
+массива с клавиатуры. Реализуйте 2 функции. Первая для формирования массива.
+Вторая для нахождения количества элементов массива
 */
 
-let n = prompt('Введите кол-во эл. массива');
-let arr = [];
-
-for (let i = 0; i < n; i++) {
-    arr.push(prompt());
-
+const n = 4;
+function doArr() {
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(prompt())
+    }
+    return arr
 }
 
-let res = arr.some(function (elem) {
-    if (!isNaN(elem)) {
-        return true
-    } else {
-        return false
-    }
-})
-console.log(res);
+let finArr = doArr();
+
+function searchElems(finArr) {
+return finArr.length
+}
+
+let arrLength = searchElems(finArr);
+console.log(arrLength);

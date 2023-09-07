@@ -1,20 +1,19 @@
-/* Заполнять массив числами бесконечно до тех пор, пока длина массива не будет
-равна 5. Вывести массив в консоль (цикл for, while)
+/* Напишите функцию, которая принимает статичный массив строк. Необходимо
+отфильтровать значения и оставить только те, где длина строк до 2 символов.
+[“by”, “belarus”, “de”, “ru”, “germany”] -> [“by”, “de”, “ru”]
+
  */
 
-let arr = [];
+const arr = ['by', 'belarus', 'de', 'ru', 'germany']
 
-// for (; ;) {
-//     arr.push(prompt())
-//     if (arr.length === 5) {
-//         break
-//     }
-// }
-console.log(arr);
-
-while (true) {
-    arr.push(prompt())
-    if (arr.length === 5) {
-        break
-    }
+function filterArr() {
+    let filt = arr.filter(function (el) {
+        if (el.length <= 2) {
+            return true
+        }
+    })
+return filt
 }
+
+let res = filterArr(arr);
+console.log(res);

@@ -1,25 +1,14 @@
-/* На входе 5 значений. Все эти значения пользователь вводит с клавиатуры и
-заполяет массив. Далее необходимо создать массив только из чисел. Если длина
-массива равна 0, то вывести ‘Массив пуст’. filter
+/* Пользователь вводит имя фамилию. Необходимо создать функцию
+возвращающую строку вида «Привет, {имя} {фамилия}»
  */
-let num = 5;
-let arr = [];
-
-for (let i = 0; i < num; i++) {
-    arr.push(prompt('Введите элемент массива'));
 
 
+const name_ = prompt('Введите имя');
+const surname = prompt('Введите фамилию');
+
+function getName(name_, surname) {
+    return `Привет, ${name_} ${surname}`
 }
 
-let res = arr.filter(function (elem) {
-    if (!isNaN(elem)) {
-        return true;
-    } else {
-        return false
-    }
-})
-if (res.length > 0) {
+let res = getName(name_, surname);
 console.log(res);
-} else {
-    console.log('Массив пуст');
-}
