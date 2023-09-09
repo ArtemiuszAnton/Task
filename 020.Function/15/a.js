@@ -1,16 +1,26 @@
-/* Пользователь вводит 6 значений и распределяет их поровну между 2 массивами.
-Cоздать новый массив, добавить туда значения всех массивов. Spread
+/* На входе n – количество элементов массива. Далее производится заполнение
+массива с клавиатуры. Реализуйте 3 функции. Первая для формирования массива.
+Вторая для проверки, что в массиве только числа. Третья для получения
+произведения всех элементов массива. Если результат функции проверки – true,
+то вызывать новую функцию, возвращающую произведение всех элементов
+массива
  */
 
-let arr_1 = [];
-let arr_2 = [];
+let n = 5;
 
-for (let i = 0; i < 6; i++) {
-
-    if (i < 3) {
-        arr_1.push(prompt())
-    } else arr_2.push(prompt())
-
+function doArr(n) {
+    const arr = [];
+    for (let i = 0; i < n; i++)  arr.push(prompt())
+    return arr
 }
-let nArr = [...arr_1,...arr_2]
-console.log(nArr);
+let arr = doArr(n);
+
+function multiplyArr(arr) {
+    let res = arr.reduce((sum, elem) => {
+        return sum * elem
+    }, 1)
+    return res
+}
+
+let mult = multiplyArr(arr);
+console.log(mult);

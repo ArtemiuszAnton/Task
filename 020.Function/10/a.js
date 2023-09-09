@@ -1,34 +1,33 @@
-/*  На входе n – количество элементов массива. Далее производится заполнение
-массива с клавиатуры. Выведите массив строк из четност и нечетности, в
-соответствии с тестом ниже:
-[1, 2, 3, 4, 5, 6] -> [“нечет”, “чет”, “нечет”, “чет”, “нечет”, “чет”]
-[1, 24, 5] -> [“нечет”, “чет”, “нечет”]
-Использовать map
+/*  На входе массив. Реализуйте 2 функции. Первая для проверки, что в массиве
+только числа. Вторая для получения только четных элементов массива. Если
+результат функции проверки – true, то вызывать новую функцию, возвращающую
+массив с четными элементами массива
  */
 
-let n = 6;
-let arr = [];
-for (let i = 0; i < n; i++) {
-    arr.push(prompt())
+let arr = [2, 3, 4, 556, 66, 5, 53, 44, 55, 6];
+
+
+function checkArr(arr) {
+    let checker = arr.every(function (elem) {
+        if (!isNaN(elem)) {
+            return true
+        }
+    })
+    return checker
 }
 
-// let res = arr.map(function (elem) {
-//     if (elem % 2 === 0) {
-//         return 'чет'
-//     } else {
-//         return 'нечет'
-//     }
-// })
-// console.log(res);
 
-
-let newArr = [];
-arr.forEach(function (elem) {
-    if (elem % 2 === 0) {
-        newArr.push('чет')
+function updateArr(arr) {
+    const check = checkArr(arr);
+    const finArr = [];
+    if (check === true) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) finArr.push(arr[i])
+        }
     } else {
-        newArr.push('нечет')
+        return 'error'
     }
-})
-
-console.log(newArr);
+    return finArr
+}
+let fin = updateArr(arr)
+console.log(fin);

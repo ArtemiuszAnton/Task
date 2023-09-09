@@ -1,23 +1,39 @@
-/*  На входе n – количество элементов массива. Далее производится заполнение
-массива с клавиатуры. Необходимо создать новый массив из элементов, каждое
-значение которого имеет вид #name. map, forEach
-[“hschool”, “company”] -> [“#hschool”, “#company”]
+/*  На входе массив. Реализуйте 2 функции. Первая для проверки, что в массиве
+только числа. Вторая для поиска максимального значения в массиве. Если
+результат функции проверки – true, то вызывать новую функцию, возвращающую
+максимальное значение массива
+
  */
 
-let n = prompt('Введите кол-во эл массива');
-let arr = [];
-for (let i = 0; i < n; i++) {
-    arr.push(prompt())
+const arr = [2, 3, 4, 55, 67,'rr'];
+
+function checkArr(arr) {
+    let res = arr.every(function (elem) {
+        if (typeof elem === 'number') {
+            return true
+        } else {
+            return false
+        }
+    })
+    return res
 
 }
+function searchArr(arr) {
+    let check = checkArr(arr)
+    if (check === true) {
+        let res = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (res < arr[i]) {
+                res = arr[i]
+            }
+        }
+        return res
+    } else {
+        return 'error'
+    }
 
-let newArr = []
-// arr.forEach(function (elem) {
-//     newArr.push('#' + elem)
-// })
-// console.log(newArr);
+   
+}
 
-let res = arr.map(function (elem) {
-    return '#' + elem
-})
+let res = searchArr(arr);
 console.log(res);

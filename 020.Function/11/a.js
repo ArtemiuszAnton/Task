@@ -1,27 +1,18 @@
-/* На входе n – количество элементов массива. Далее производится заполнение
-массива с клавиатуры. Выведите произведение всех элементов массива.
-Проверки на ввод только чисел. Использовать forEach, reduce
+/*  На входе число. Необходимо создать функцию, возвращающую факториал числа
+4! = 1 * 2 * 3 * 4
+
  */
 
-let n = 5;
-let arr = [];
+let num = 4;
 
-for (let i = 0; i < n; i++) {
-    arr.push(+prompt())
+
+function factoringNum(num) {
+    let factNum = 1
+    for (let i = 1; i <= num; i++) {
+        factNum *= i
+    }
+    return factNum
 }
 
-res = 1
-arr.forEach(function (elem) {
-    if (!isNaN(elem)) {
-        res *= elem
-    }
-})
-console.log(res);
-
-// reduce
-
-let res_2 = arr.reduce(function (elem, sum) {
-    return elem * sum
-})
-
-console.log(res_2);
+let fin = factoringNum(num);
+console.log(fin);

@@ -1,25 +1,28 @@
-/* На входе n – количество элементов массива. Далее производится заполнение
-массива arr с клавиатуры. Также в памяти есть статичная переменная со
-значением javascript. Необходимо создать новый массив из отфильтрованных
-значений, где строка массива arr включают значение переменной javascript.
-Проверка на ввод только текстовых значений на заполнение массива. forEach
+/* На входе строка. Необходимо создать функцию, возвращающую true, если это
+слово анаграмма и false в противном случае
 
  */
 
-let n = 4;
-let arr = [];
-const js = 'javascript';
+const str_1 = prompt();
+const str_2 = prompt();
 
-for (let i = 0; i < n; i++) {
-    let str = prompt() 
-  if (isNaN(str)) arr.push(str)
+function isValidStr(str_1, str_2) {
+  if (!isNaN(str_1)) return false
+  if (!isNaN(str_2)) return false
+  return true
 }
 
-let res = arr.filter(function (elem) {
-    return elem.includes(js) 
-    
-})
+function checkStr(str_1, str_2) {
+  let res = isValidStr(str_1, str_2)
+  if (res === true) {
+    return str_1.split('').sort().join('') === str_2.split('').sort().join('') ? true : false
+  } else {
+    return 'error'
+  }
 
+}
+
+let res = checkStr(str_1, str_2);
 console.log(res);
 
 

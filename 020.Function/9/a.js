@@ -1,28 +1,34 @@
-/* На входе n – количество элементов массива. Далее производится заполнение
-массива с клавиатуры. Выведите сумму всех элементов массива. Проверки на
-ввод только чисел. Использовать forEach, reduce
-
+/*
+ На входе массив. Реализуйте 2 функции. Первая для проверки, что в массиве
+только числа. Вторая для получения массива с удвоенными значенями каждого
+элемента. Если результат функции проверки – true, то вызывать новую функцию,
+возвращающую массив с удвоенными элементами
  */
 
-let n = 5;
-let arr = [];
+let arr = [2, 3, 4, 5, 66, 77, 8, 12];
 
-for (let i = 0; i < n; i++) {
-    arr.push(+prompt())
+
+function checkArr(arr) {
+    let checker = arr.every(function (elem) {
+        if (!isNaN(elem)) {
+            return true
+        }
+    })
+    return checker
 }
 
-res = 0
-arr.forEach(function (elem) {
-    if (!isNaN(elem)) {
-        res += elem
+
+function getMultiply(arr) {
+    const check = checkArr(arr);
+    const finArr = [];
+    if (check === true) {
+        for (let i = 0; i < arr.length; i++) {
+            finArr.push(arr[i] * 2)
+        }
+    } else {
+        return 'error'
     }
-})
-console.log(res);
-
-// reduce
-
-let res_2 = arr.reduce(function (elem, sum) {
-    return elem + sum
-})
-
-console.log(res_2);
+    return finArr
+}
+let fin = getMultiply(arr)
+console.log(fin);

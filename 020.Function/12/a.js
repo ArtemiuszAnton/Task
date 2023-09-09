@@ -1,24 +1,22 @@
-/*  На входе n – количество элементов массива. Далее производится заполнение
-массива с клавиатуры. Необходимо создать новый массив из отфильтрованных
-значений, где строка начинается на [a, h]. Проверка на ввод только текстовых
-значений на заполнение массива. filter
-[“ann”, “school”, “hschool”, “borabora”] -> [“ann”, “hschool”]
+/*  На входе строка. Необходимо создать функцию, возвращающую true, если это
+слово палиндром и false в противном случае
 
  */
 
-let n = 4;
-let array = []
-for (let i = 0; i < n; i++) {
-    array.push(prompt('Введите текст'))
+const str = prompt();
 
+function isValsidStr(str) {
+    return isNaN(str) ? true : false
 }
 
-let res = array.filter(function (elem) {
-    if (elem.startsWith('a') || elem.startsWith('h')) {
-        return true
+function checkStr(str) {
+    let res = isValsidStr(str)
+    if (res === true) {
+        return str === str.split('').reverse().join('') ? true : false
     } else {
-        return false
+        return 'error'
     }
-})
+}
 
+let res = checkStr(str);
 console.log(res);
