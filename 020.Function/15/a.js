@@ -8,18 +8,37 @@
 
 let n = 5;
 
+
+
 function doArr(n) {
     const arr = [];
-    for (let i = 0; i < n; i++)  arr.push(prompt())
+    for (let i = 0; i < n; i++) {
+        arr.push(+prompt())
+    }
     return arr
 }
 let arr = doArr(n);
 
-function multiplyArr(arr) {
-    let res = arr.reduce((sum, elem) => {
-        return sum * elem
-    }, 1)
+function isValid(arr) {
+    let res = arr.every(function (elem) {
+        if (!isNaN(elem)) {
+            return true
+        } else {
+            return false
+        }
+    })
     return res
+
+}
+
+function multiplyArr(arr) {
+    let bool = isValid(arr);
+    if (bool == true) {
+        return arr.reduce((sum, elem) => { sum * elem }, 1)
+
+    } else {
+        return 'error'
+    }
 }
 
 let mult = multiplyArr(arr);
