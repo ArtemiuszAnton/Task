@@ -1,33 +1,16 @@
-/*  На входе массив. Реализуйте 2 функции. Первая для проверки, что в массиве
-только числа. Вторая для получения только четных элементов массива. Если
-результат функции проверки – true, то вызывать новую функцию, возвращающую
-массив с четными элементами массива
+/*  8. Напишите IIFE, которая принимает массив и возвращает новый массив,
+содержащий только уникальные элементы.
+[1, 1, 2, 2, 2, 3, 4, 5, 5, 5] –> [1, 2, 3, 4, 5].
  */
 
-let arr = [2, 3, 4, 556, 66, 5, 53, 44, 55, 6];
+let arr = [1, 1, 2, 2, 2, 3, 4, 5, 5, 5];
 
-
-function checkArr(arr) {
-    let checker = arr.every(function (elem) {
-        if (!isNaN(elem)) {
-            return true
+(function filterArr() {
+    let nArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (!nArr.includes(arr[i])) {
+            nArr.push(arr[i])
         }
-    })
-    return checker
-}
-
-
-function updateArr(arr) {
-    const check = checkArr(arr);
-    const finArr = [];
-    if (check === true) {
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) finArr.push(arr[i])
-        }
-    } else {
-        return 'error'
     }
-    return finArr
-}
-let fin = updateArr(arr)
-console.log(fin);
+    console.log(nArr);
+}())

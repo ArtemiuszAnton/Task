@@ -1,34 +1,39 @@
-/* На входе массив. Реализуйте 2 функции. Первая для проверки, что в массиве
-только числа. Вторая для получения суммы всех элементов массива. Если
-результат функции проверки – true, то вызывать новую функцию, возвращающую
-сумму всех элементов массива
+/* 5. Напишите функцию, которая принимает строку в виде пароля и проверяет,
+является ли этот пароль надежным. Надежный пароль должен содержать хотя бы
+одну заглавную букву, цифры, а его длина должна быть не менее 8 символов.
+
 
  */
 
-let arr = [2, 3, 45, 5, 665, 43, 'f'];
+let pass = 'ffff22ffffFass';
 
-function checkArr(arr) {
-    let res = arr.every(function (elem) {
-        if (!isNaN(elem)) {
-            return true
+function isValidPass(pass) {
+    let upper
+    if (pass.length >= 8) {
+        for (let i = 0; i < pass.length; i++) {
+            if (pass[i] !== pass[i].toLowerCase()) {
+                upper = true
+            }
         }
-    })
-    return res
-
-}
-
-
-
-function getSum(arr) {
-    const check = checkArr(arr);
-    if (check === true) {
-        let res = arr.reduce(function (sum, elem) {
-            return sum + elem
-        }, 0)
-        return res
-    } else {
-        return 'error'
     }
+    
+    let findNum
+    if (upper === true) {
+        for (let i = 0; i < pass.length; i++) {
+            if (!isNaN(pass[i])) {
+                findNum = true
+            }
+
+        }
+    }
+
+    if (findNum === true) {
+        return 'Ваш пароль надежный'
+    } else {
+        return 'Ваш пароль недостаточно надежный'
+    }
+
 }
-let fin = getSum(arr)
-console.log(fin);
+
+let res = isValidPass(pass);
+console.log(res);
