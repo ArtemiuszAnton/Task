@@ -1,31 +1,20 @@
-// На входе массив. Реализуйте 2 функции. Первая для проверки, что в массиве
-// только строки. Вторая для получения суммы всех строчных элементов массива.
-// Если результат функции проверки – true, то вызывать новую функцию,
-// возвращающую конкатенацию всех строчных элементов массива
+/* 6. Реализуйте функцию, которая будет подсчитывать количество своих вызовов с
+использованием замыкания. Каждый раз, когда функция вызывается, счетчик
+увеличивается на 1 и возвращает текущее значение счетчика. */
 
 
-const arr = ['raz', 'dwa', 'tri'];
-
-function checkArr(arr) {
-    let checker = arr.every(function (elem) {
-        if (isNaN(elem)) {
-            return true
-        }
-    })
-    return checker
-}
-
-function getSum(arr) {
-    const check = checkArr(arr);
-    let sum = ''
-    if (check === true) {
-        for (let i = 0; i < arr.length; i++) {
-            sum += arr[i]
-        }
-    } else {
-        console.log('error');
+function getFunc() {
+    let count = 0;
+    return function () {
+        count++
+        console.log(count);
     }
-    return sum
 }
-let fin = getSum(arr)
-console.log(fin);
+
+
+let res = getFunc();
+res();
+res();
+res();
+res();
+res();
