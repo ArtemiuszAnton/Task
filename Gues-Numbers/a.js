@@ -13,22 +13,29 @@
  Функции.
 */
 
-let left = 0;
-let right = 100;
-let secretNum = Math.round(Math.random((left + right) / 2) * 100)
-let spin = prompt(`Программа задала рандомное число от ${left} до ${right}. Найдите его!\n Введите число`)
 
-for (let i = 0; i < 100; i++) {
-    if (spin == secretNum) {
-        alert(`${'Поздравляем, вы угадали правильное число! Число '} ${secretNum}`)
-        break
-    } else if (spin > secretNum) {
-        right = spin
-        spin = prompt(`Вы ввели число: ${spin} - Перебор! \n Попробуйте еще...  Введите число от ${left} до ${right}`)
-    } else {
-        left = spin
-        spin = prompt(`Вы ввели число: ${spin} - Маловато! \n Попробуйте еще...  Введите число от ${left} до ${right}`)
+const secretNum = Math.round(Math.random() * 100)
+
+function tryPlay(secretNum) {
+    let left = 0;
+    let right = 100;
+    let spin = prompt(`Программа задала рандомное число от ${left} до ${right}. Найдите его!\n Введите число`)
+
+
+    for (let i = 0; i < 100; i++) {
+        if (spin == secretNum) {
+            alert(`Поздравляем, вы угадали правильное число! Число ${secretNum}\n Вам понадобилось ${i + 1} попыток`)
+            break
+        } else if (spin > secretNum) {
+            right = spin
+            spin = prompt(`Вы ввели число: ${spin} - Перебор! \n Попробуйте еще...  Введите число от ${left} до ${right}`)
+        } else {
+            left = spin
+            spin = prompt(`Вы ввели число: ${spin} - Маловато! \n Попробуйте еще...  Введите число от ${left} до ${right}`)
+        }
     }
+    return secretNum
 }
 
-console.log(secretNum);
+let res = tryPlay(secretNum)
+console.log(res);
