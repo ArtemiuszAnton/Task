@@ -7,4 +7,14 @@
 такими сторонами не существует
  */
 
+const a = 4;
+const b = 2;
+const c = 7;
 
+function isValidTriangle(a, b, c) {
+    if ((a + b) < c ||(c + b) < a ||(a + c) < b ) throw new Error('Треугольника с таким соотношением сторон быть не может')
+    return true
+}
+
+let res = isValidTriangle(a, b, c);
+console.log(res);
