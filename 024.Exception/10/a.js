@@ -7,7 +7,7 @@ let email = 'artem25@gmail.com';
 
 function isValidEmail(email){
     if (email.includes('@')) return true 
-    else throw new Error('not valid email')
+    else throw new Error('not valid email');
 }
 
 let res = isValidEmail(email);
