@@ -5,10 +5,17 @@
 
 const btn = document.querySelector('button');
 const inp = document.querySelector('input');
+const p = document.querySelector('p')
 
-btn.addEventListener('click', ()=>{
+btn.addEventListener('click', () => {
     try {
-        if(!inp) throw new Error('inp is empty')
+        if (!inp) throw new Error('inp is empty');
+        arr = [0, 1]
+        for (let i = 2; i <= inp.value; i++) {
+            arr.push(arr[i] = arr[i - 1] + arr[i - 2])
+
+        }
+        p.innerHTML += arr
     } catch (error) {
         alert(error.message)
     }

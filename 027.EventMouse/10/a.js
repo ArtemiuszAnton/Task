@@ -1,15 +1,21 @@
-/* 10. На вход подается строка в виде электронной почты пользователя. Необходимо
-найти в данной почте “@”. Если же есть, то вывести булевое true, в противном
-случае бросить исключение и его обработать
+/* 10. После нажатия на кнопку «Разблокировать» мы можем вносить изменения в
+инпут. После нажатия на заблокировать данное действие запрещается, тем самым
+выключая возможность редактирования значения инпута
  */
 
-let email = 'artem25@gmail.com';
+const inp = document.querySelector('input');
+const unblock = document.querySelector('#unb');
+const block = document.querySelector('#bl');
+inp.disabled = true
 
-function isValidEmail(email){
-    if (email.includes('@')) return true 
-    else throw new Error('not valid email');
-}
 
-let res = isValidEmail(email);
-console.log(res);
+unblock.addEventListener('click', () => {
+    inp.disabled = false
+})
+
+block.addEventListener('click', () => {
+    inp.disabled = true
+})
+
+
 
