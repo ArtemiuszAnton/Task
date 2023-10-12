@@ -14,6 +14,10 @@ const obj_2 = {
     id: 2
 }
 
+const newObj = {
+    
+}
+
 function loadObj(obj_1, obj_2) {
 
 }
