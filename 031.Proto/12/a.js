@@ -1,15 +1,13 @@
-/* Дан массив 2, 5, 9, 15, 0, 4. Выведите все числа кратные 5 циклом while
-
+/* 12. Реализуйте функцию, которая будет считать количество своих вызовов
  */
 
-let arr = [2, 5, 9, 15, 0, 4];
-let res = []
-i = 0
-while (i < arr.length) {
-    
-    if (arr[i] % 5 === 0) {
-        res.push(arr[i])
-    } i++
-    
+function getCalls() {
+    let res = 0
+    return () => {
+        res += 1
+        console.log(res);
+    }
 }
-console.log(res);
+
+let res = getCalls()
+res()

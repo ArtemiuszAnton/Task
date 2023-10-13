@@ -5,5 +5,16 @@
 */
 
 const obj = {
-
 }
+
+const n = 5
+
+function getKeys(obj) {
+    for (let i = 0; i < n; i++) {
+        
+    }
+    return obj
+}
+
+let res = getKeys(obj)
+console.log(res);

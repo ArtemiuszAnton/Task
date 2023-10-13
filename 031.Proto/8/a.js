@@ -1,14 +1,13 @@
-// Дан массив с элементами [1, 2, 2, 3, 4, 4, 3, 4, 5]. Выведите каждый элемент массива
-// без повторений -> [1, 2, 3, 4, 5] (for, for of)
+//8. На вход программе подается число в двоичной системе счисления. Необходимо
+// преобразовать его в десятичную систему счисления
 
 
-let arr = [1, 2, 2, 3, 4, 4, 3, 4, 5];
-let arrPush = []
+const num = '11011'
+let n = 0
 
-for (let i = 0; i < arr.length; i++) {
-   if (!arrPush.includes(arr[i])) {
-    arrPush.push(arr[i])
-   }
-    
+for (let i = num.length - 1; i >= 0; i--) {
+   if (+num[i] === 1) n += 1 * Math.pow(2, num.length - 1 - i)
+
 }
-console.log(arrPush);
+
+console.log(n);
