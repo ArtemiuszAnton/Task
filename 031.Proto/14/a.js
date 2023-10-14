@@ -1,14 +1,24 @@
-/*  . Дан массив числами, например: [10, 20, 30, 50, 235, 3000]. Выведите на экран только
-те числа из массива, которые начинаются на цифру 1, 2 или 5 -> 10, 20, 50, 235
+/*  14. По условию задачи даны инпут и кнопка. Напишите функцию, которая
+преобразует любое предложение инпута в предложение VAPORWAVE.
+предложение VAPORWAVE преобразует все буквы в верхний регистр и добавляет
+2 пробела между каждой буквой (или специальным символом)
+Why isn't my code working? – W H Y I S N ' T M Y C O D E W O R K I N G ?
 
  */
 
-let arr = [10, 20, 30, 50, 235, 3000];
-let res = [];
-for (let i = 0; i < arr.length; i++) {
-    if (String(arr[i][0]) === '1' || String(arr[i][0]) === '2' || String(arr[i][0]) === '5') {
-        res.push(arr[i])
-        
+const btn = document.querySelector('button');
+const inp = document.querySelector('input');
+const p = document.querySelector('p');
+
+btn.addEventListener('click', () => {
+    try {
+        if (!inp.value) throw new Error('input is empty')
+        let vw = ''
+        for (let i = 0; i < inp.value.length; i++) {
+            vw += ` ${inp.value[i].toUpperCase()} ` 
+        }
+        p.textContent = vw
+    } catch (error) {
+        alert(error.message)
     }
-}
-console.log(res);
+})
