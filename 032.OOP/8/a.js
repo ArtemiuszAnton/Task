@@ -1,13 +1,38 @@
-//8. На вход программе подается число в двоичной системе счисления. Необходимо
-// преобразовать его в десятичную систему счисления
+//8. Реализуйте класс Validator. У него будет метод isEmail параметром принимает
+// строку и проверяет, является ли она корректным емейлом или нет. Если является
+// - возвращает true, если не является - то false.
 
 
-const num = '11011'
-let n = 0
 
-for (let i = num.length - 1; i >= 0; i--) {
-   if (+num[i] === 1) n += 1 * Math.pow(2, num.length - 1 - i)
+// class Validator {
+//    email = 'vasya.pupkin@gmai.com'
+//    isEmail = () => {
+//       try {
+//          if (!/^[a-zA-Z0-9.-]+\@[a-z]+\.[a-z]{1,5}$/gm.test(this.email)) throw new Error(false)
+//          else console.log(true);
+//       } catch (error) {
+//          console.log(error.message);
+//       }
+//    }
+// }
 
+// let validator = new Validator()
+// console.log(validator.isEmail());
+
+class Validator {
+   MyEmail;
+   constructor(email) {
+      this.MyEmail = email
+   }
+   isEmail = () => {
+      try {
+         if (!/^[\w.-]+\@[a-z]+\.[a-z]{1,5}$/gm.test(this.MyEmail)) throw new Error(false)
+         else console.log(true);
+      } catch (error) {
+         console.log(error.message);
+      }
+   }
 }
 
-console.log(n);
+let validator = new Validator('artem.anton@gmail.com')
+validator.isEmail();
