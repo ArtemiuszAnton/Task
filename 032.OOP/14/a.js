@@ -1,24 +1,20 @@
-/*  14. По условию задачи даны инпут и кнопка. Напишите функцию, которая
-преобразует любое предложение инпута в предложение VAPORWAVE.
-предложение VAPORWAVE преобразует все буквы в верхний регистр и добавляет
-2 пробела между каждой буквой (или специальным символом)
-Why isn't my code working? – W H Y I S N ' T M Y C O D E W O R K I N G ?
+/*  14. Реализуйте класс ServerPut. Обязательными функциями считаются функции
+middleware, controller, service, repository. Цепочка взаимодействия между методами
+следующая:
+middleware -> controller -> service -> repository, где:
+middleware – функция валидатор
+controller – функция, принимающая данные. Принимает json
+service – функция проверки на то что с repository вернулось значение
+repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие с
+этим массивом осуществляется только в repository. Массив находится в приложении
+Задание:
+на вход подается JSON вида:
+`{
+{"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1
+}`
+Необходимо найти id клиента в массиве БД. Если совпадение есть, произвести
+обновление значений для соответствующих ключей.
+Если совпадения по id нет – ошибка. Добавить проверки 
 
  */
 
-const btn = document.querySelector('button');
-const inp = document.querySelector('input');
-const p = document.querySelector('p');
-
-btn.addEventListener('click', () => {
-    try {
-        if (!inp.value) throw new Error('input is empty')
-        let vw = ''
-        for (let i = 0; i < inp.value.length; i++) {
-            vw += ` ${inp.value[i].toUpperCase()} ` 
-        }
-        p.textContent = vw
-    } catch (error) {
-        alert(error.message)
-    }
-})

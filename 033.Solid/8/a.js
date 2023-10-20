@@ -1,38 +1,50 @@
-//8. Реализуйте класс Validator. У него будет метод isEmail параметром принимает
-// строку и проверяет, является ли она корректным емейлом или нет. Если является
-// - возвращает true, если не является - то false.
+//8. Реализуйте класс DomHtml, который будет взаимодействовать с DOM по клику на
+// кнопку. Класс содержит 1 метод валидации, называемый middleware, в котором
+// происходит проверка на uuid, введенный в input. Вывести true, если провека
+// успешна. 
+
+const btn = document.querySelector('button');
+const inp = document.querySelector('input');
+const p = document.querySelector('p')
 
 
-
-// class Validator {
-//    email = 'vasya.pupkin@gmai.com'
-//    isEmail = () => {
-//       try {
-//          if (!/^[a-zA-Z0-9.-]+\@[a-z]+\.[a-z]{1,5}$/gm.test(this.email)) throw new Error(false)
-//          else console.log(true);
-//       } catch (error) {
-//          console.log(error.message);
-//       }
-//    }
-// }
-
-// let validator = new Validator()
-// console.log(validator.isEmail());
-
-class Validator {
-   MyEmail;
-   constructor(email) {
-      this.MyEmail = email
+class DomHtml {
+   data = [
+      { "id": 1, "name": "Yesenia", "age": 22 },
+      { "id": 2, "name": "Hanna", "age": 22 },
+      { "id": 3, "name": "Stanislau", "age": 25 },
+      { "id": 4, "name": "German", "age": 18 },
+      { "id": 5, "name": "Maria", "age": 27 }
+   ]
+   middleware() {
+      btn.addEventListener('click', () => {
+         const check = this.data.some(el => {
+            if (inp.value.id == el.id) p.textContent = 'true'
+         })
+         return check
+      })
    }
-   isEmail = () => {
-      try {
-         if (!/^[\w.-]+\@[a-z]+\.[a-z]{1,5}$/gm.test(this.MyEmail)) throw new Error(false)
-         else console.log(true);
-      } catch (error) {
-         console.log(error.message);
-      }
+   controller() {
+      const res = this.service()
+      return res
+   }
+   service() {
+      const res = this.repository()
+      return res
+   }
+   repository() {
+      // const data = [
+      //    { "id": 1, "name": "Yesenia", "age": 22 },
+      //    { "id": 2, "name": "Hanna", "age": 22 },
+      //    { "id": 3, "name": "Stanislau", "age": 25 },
+      //    { "id": 4, "name": "German", "age": 18 },
+      //    { "id": 5, "name": "Maria", "age": 27 }
+      // ]
+      // return data
    }
 }
 
-let validator = new Validator('artem.anton@gmail.com')
-validator.isEmail();
+const domhtml = new DomHtml();
+console.log(domhtml.middleware(data));
+
+
