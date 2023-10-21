@@ -9,42 +9,36 @@ const p = document.querySelector('p')
 
 
 class DomHtml {
-   data = [
-      { "id": 1, "name": "Yesenia", "age": 22 },
-      { "id": 2, "name": "Hanna", "age": 22 },
-      { "id": 3, "name": "Stanislau", "age": 25 },
-      { "id": 4, "name": "German", "age": 18 },
-      { "id": 5, "name": "Maria", "age": 27 }
-   ]
-   middleware() {
+   // data = [
+   //    { "id": 1, "name": "Yesenia", "age": 22 },
+   //    { "id": 2, "name": "Hanna", "age": 22 },
+   //    { "id": 3, "name": "Stanislau", "age": 25 },
+   //    { "id": 4, "name": "German", "age": 18 },
+   //    { "id": 5, "name": "Maria", "age": 27 }
+   // ]
+  
+   }
+   repository(json) {
+      const data = [
+         { "id": 1, "name": "Yesenia", "age": 22 },
+         { "id": 2, "name": "Hanna", "age": 22 },
+         { "id": 3, "name": "Stanislau", "age": 25 },
+         { "id": 4, "name": "German", "age": 18 },
+         { "id": 5, "name": "Maria", "age": 27 }
+      ]
+
       btn.addEventListener('click', () => {
-         const check = this.data.some(el => {
-            if (inp.value.id == el.id) p.textContent = 'true'
+         const check = data.some(el => {
+            if (json.id == el.id) p.textContent = 'true'
          })
-         return check
+        
       })
-   }
-   controller() {
-      const res = this.service()
-      return res
-   }
-   service() {
-      const res = this.repository()
-      return res
-   }
-   repository() {
-      // const data = [
-      //    { "id": 1, "name": "Yesenia", "age": 22 },
-      //    { "id": 2, "name": "Hanna", "age": 22 },
-      //    { "id": 3, "name": "Stanislau", "age": 25 },
-      //    { "id": 4, "name": "German", "age": 18 },
-      //    { "id": 5, "name": "Maria", "age": 27 }
-      // ]
-      // return data
+      return check
    }
 }
 
 const domhtml = new DomHtml();
-console.log(domhtml.middleware(data));
+const json = JSON.parse(inp.value)
+console.log(domhtml.middleware(json));
 
 
