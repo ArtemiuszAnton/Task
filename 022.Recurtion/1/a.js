@@ -1,13 +1,24 @@
-/* Отобразите в строке через пробел числа от 0 до 10 по возрастанию используя
-рекурсию
- */
+// На входе n – количество элементов массива.
+//  Далее производится заполнение массива с клавиатуры.
+//  Необходимо создать функцию возвращающую новый массив из элементов, каждое значение которого имеет вид #name.
+// [“hschool”, “company”] -> [“#hschool”, “#company”] 
 
-let i = 10;
+const n = 4;
 
-function getNums(i) {
-    if (i === 0) return i
-    return `${i} ` + getNums(i - 1)
+function doArray(n) {
+    const arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(prompt())
+    }
+    return arr
 }
 
-let res = getNums(i);
-console.log(res);
+
+
+function changeArray(n) {
+    let res = doArray(n);
+    return res.map((el) => '#' + el)
+}
+
+const change = changeArray(n);
+console.log(change);
