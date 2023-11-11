@@ -5,20 +5,20 @@
  */
 
 
-const n = 5;
+let n = 5;
 
 function doArr(n) {
-   const arr = [];
+   let arr = []
    for (let i = 0; i < n; i++) {
       arr.push(prompt())
    }
    return arr
 }
 
-function filterArr(n) {
+function filtArr(n) {
    let res = doArr(n)
-   return   res.filter((el) => el[0] == 'a' || el[0] == 'h')
+   return res.filter(el => (el[0] == 'h' || el[0] == 'a'))
 }
 
-const fin = filterArr(n)
-console.log(fin);
+let result = filtArr(n);
+console.log(result);
