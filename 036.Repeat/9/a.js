@@ -3,9 +3,6 @@
 клик происходит, то удалить данное значение из массива в div
  */
 
-
-
-
 document.querySelector('button').addEventListener('click', () => {
     const p = document.querySelector('p');
     const div = document.querySelector('div')
