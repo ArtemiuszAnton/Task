@@ -13,7 +13,7 @@ btn.addEventListener('click', () => {
     try {
         if (isNaN(inp.value)) throw new Error('not a number')
         if (inp.value < 0) throw new Error('меньше нуля')
-        else return p.textContent = inp.value
+        else return p.textContent = inp.value *2
     } catch (error) {
         return p.textContent = error.message
     }
