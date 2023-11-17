@@ -9,6 +9,7 @@ const inp = document.querySelector('input');
 const p = document.querySelector('p')
 
 
+
 btn.addEventListener('click', () => {
     try {
         if (isNaN(inp.value)) throw new Error('not a number')
