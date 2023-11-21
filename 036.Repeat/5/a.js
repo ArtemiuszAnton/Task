@@ -6,7 +6,18 @@
 
 const btn = document.querySelector('button');
 const inp = document.querySelector('input');
-const p = document.querySelector('p')
+const p = document.querySelector('p');
+
+btn.addEventListener('click', () => {
+    try {
+        if (inp.value < 0) throw new Error('num is not valid');
+        if(isNaN(inp.value)) throw new Error('error: not num');
+        else p.innerHTML = inp.value * 2
+        inp.value = ''
+    } catch (error) {
+        alert(error.message)
+    }
+})
 
 
 
