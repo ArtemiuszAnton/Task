@@ -20,7 +20,8 @@ class Html {
                         div.innerHTML = arr
                         let arr_sort = arr.sort((a, b) => a - b)
                         for (let i = 0; i < arr_sort.length; i++) {
-                                if (arr_sort[i] != arr_sort[i + 1] && arr_sort[i] != arr_sort[i - 1]) arr_unique.push(arr_sort[i]);
+                                if (arr_sort[i] != arr_sort[i + 1] && arr_sort[i] != arr_sort[i - 1])
+                                 arr_unique.push(arr_sort[i]);
                         }
                         p.textContent = arr_unique
                         inp.value = ''
