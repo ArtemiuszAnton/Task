@@ -32,6 +32,7 @@ play.addEventListener('click', () => {
     img.style = `background-image: url(${audios[current_index_song].img})`
 })
 
+
 next.addEventListener('click', () => {
     if (audios.length - 1 === current_index_song) return;
     current_index_song++;
@@ -43,6 +44,7 @@ next.addEventListener('click', () => {
     audio.play();
     flag = true
 })
+
 
 previous.addEventListener('click', () => {
     if (0 == current_index_song) return;
