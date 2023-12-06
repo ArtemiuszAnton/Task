@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+const { profile } = require("console");
+const { listenerCount } = require("process");
+
 app.get('/', (req, res) => {
     const arr = [1, 2, 3, 2, 1, 4, 4, 5, 5, 5, 2, 1, 8]
     const uniq = [];
@@ -24,3 +27,23 @@ app.listen(3000, () => {
     console.log('Server is running');
 });
 
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// function getNewArr() {
+//     const int = 3;
+//     let littleArr = [];
+//     let globalArr = [];
+//         for (let i = 0; i < arr.length; i++) {
+//             littleArr.push(arr[i]);
+//             if (littleArr.length == int||i === arr.length -1 && littleArr.length !== int) {
+//                 globalArr.push(littleArr);
+//                 littleArr = []
+//             } 
+       
+//     }
+//     return globalArr
+// }
+
+// const res = getNewArr();
+// console.log(res);
