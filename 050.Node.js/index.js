@@ -4,13 +4,16 @@ const app = express();
 const { profile } = require("console");
 const { listenerCount } = require("process");
 
-app.get('/', (req, res) => {
-    const arr = [1, 2, 3, 2, 1, 4, 4, 5, 5, 5, 2, 1, 8]
-    const uniq = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (!uniq.includes(arr[i])) uniq.push(arr[i]);
-    }
-    res.send(uniq);
+// 6. Создать обработчик маршрута get с url: "/:id “. Необходимо получить значение id и
+// отправить клиенту. (Для того чтобы получить значение из url необходимо
+// воспользоваться деструктуризацией из request.params)
+
+
+app.get('/:id', (req, res) => {
+    const obj = { id: 1, "name": "Yesenia", "age": 22 }
+   
+    const {id} = req.params
+    res.send(id)
 });
 
 app.get('/about', (req, res) => {
@@ -28,22 +31,3 @@ app.listen(3000, () => {
 });
 
 
-// const arr = [1, 2, 3, 4, 5, 6, 7, 8];
-
-// function getNewArr() {
-//     const int = 3;
-//     let littleArr = [];
-//     let globalArr = [];
-//         for (let i = 0; i < arr.length; i++) {
-//             littleArr.push(arr[i]);
-//             if (littleArr.length == int||i === arr.length -1 && littleArr.length !== int) {
-//                 globalArr.push(littleArr);
-//                 littleArr = []
-//             } 
-       
-//     }
-//     return globalArr
-// }
-
-// const res = getNewArr();
-// console.log(res);
