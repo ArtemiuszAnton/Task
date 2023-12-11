@@ -19,7 +19,8 @@ function getAllData() {
         throw new Error('json is empty');
     }
     return json
-}
+} 
+
 
 function getId(id) {
     const filt = json.filter(el => el.id == id);
