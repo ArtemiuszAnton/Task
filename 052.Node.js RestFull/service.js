@@ -19,7 +19,7 @@ function getAllData() {
         throw new Error('json is empty');
     }
     return json
-} 
+}
 
 
 function getId(id) {
@@ -29,6 +29,25 @@ function getId(id) {
     }
     return filt;
 };
+
+function createNewData(label, category, priority) {
+    const newObject = {
+        "id": label.toLowerCase(),
+        "label": label,
+        "category": category,
+        "priority": priority
+    };
+
+
+    for (let i = 0; i < json.length; i++) {
+        if (json[i].label.toLowerCase() == newObject.label.toLowerCase()) {
+            throw new Error('object already exists') 
+        }
+    }
+    json.push(newObject);
+
+    return json
+}
 
 function updateById(id, label, category, priority) {
     let flag = false
@@ -46,7 +65,7 @@ function updateById(id, label, category, priority) {
 
 function deleteById(id) {
     const deleteElem = json.filter(el => el.id.toLowerCase() != id);
-    if(json.length == deleteElem.length) throw new Error('this id not found');
+    if (json.length == deleteElem.length) throw new Error('this id not found');
     return deleteElem
 }
 
@@ -58,4 +77,4 @@ function deleteById(id) {
 
 
 
-module.exports = { getAllData, getId, updateById, deleteById }
+module.exports = { getAllData, getId, createNewData, updateById, deleteById }
