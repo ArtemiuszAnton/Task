@@ -26,7 +26,6 @@ app.get('/:id', (req, res) => {
 
 app.post('/', (req, res) => {
     try {
-        // const {id} = req.params;
         const { label, category, priority } = req.body;
         const post = createNewData(label, category, priority);
         res.status(200).send(post)

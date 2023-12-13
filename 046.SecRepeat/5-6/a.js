@@ -22,6 +22,7 @@ class Client {
                 email: login.value,
                 pwd: pwd.value
             }
+
             const server = new Server();
             server.controller(clientData);
             console.log(server.controller(clientData));
