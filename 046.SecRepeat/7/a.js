@@ -18,7 +18,6 @@ for (let i = 0; i < pwd.length; i++) {
             if(alph[index] == doHash.toLowerCase()){
                 hashPwd += (doHash == alph[index].toLowerCase()) ? alph[index + 3].toLowerCase() : alph[index + 3].toUpperCase();
             } 
-            
         }
     }
     
